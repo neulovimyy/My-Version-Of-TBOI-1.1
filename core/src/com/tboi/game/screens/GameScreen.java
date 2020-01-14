@@ -1,24 +1,17 @@
 package com.tboi.game.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -26,7 +19,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.tboi.game.TBOIGame;
-import com.tboi.game.WorldSetting;
+import com.tboi.game.worldsetting.ObjectContact;
+import com.tboi.game.worldsetting.WorldSetting;
 import com.tboi.game.entities.MainCharacter;
 import com.tboi.game.settings.DesktopSettings;
 import com.tboi.game.settings.GameControlSetting;
@@ -53,24 +47,28 @@ public class GameScreen implements Screen {
 	Stage stage;
 	Skin skin;
 
+    int count;
+    TextureAtlas isaac;
+	ObjectContact contact;
 
 	public GameScreen(TBOIGame game) {
 		this.game = game;
 
-		gamecam = new OrthographicCamera();
-		gameViewPort = new FitViewport(DesktopSettings.V_WIDTH, DesktopSettings.V_HEIGHT, gamecam);
-		gamecam.position.set(gameViewPort.getWorldWidth()/2, gameViewPort.getWorldHeight()/2, 0);
+		game.camera.position.set(game.viewport.getWorldWidth()/2, game.viewport.getWorldHeight()/2, 0);
+
+		isaac = new TextureAtlas("entities/isaac/tr.pack");
 
 		mapLoader = new TmxMapLoader();
-		map = mapLoader.load("map/maps/dungeon1.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map);
+		map = mapLoader.load("map/maps/dungeon1-1.tmx");
+		renderer = new OrthogonalTiledMapRenderer(map, 1 / 100f);
 
 		world = new World(new Vector2(0, 0), true);
 		b2dr = new Box2DDebugRenderer();
 
 		setting = new WorldSetting(this);
+		//contact = new ObjectContact(this);
 
-        mc = new MainCharacter(this);
+        mc = new MainCharacter(this, world);
 	}
 
 	@Override
@@ -84,14 +82,18 @@ public class GameScreen implements Screen {
 
 	    control.platformControlConfig(mc, dt, move, attack);//controls
 
-		world.step(dt, 6, 2);
+		world.step( 1/ 60f, 6, 2);
 
-		gamecam.position.x = mc.body.getPosition().x;
-		gamecam.position.y = mc.body.getPosition().y;
+		mc.update(dt);
 
-		gamecam.update();
+		game.camera.position.x = mc.body.getPosition().x;
+		game.camera.position.y = mc.body.getPosition().y;
 
-		renderer.setView(gamecam);
+
+
+		game.camera.update();
+
+		renderer.setView(game.camera);
 	}
 
 	@Override
@@ -103,14 +105,19 @@ public class GameScreen implements Screen {
 
 		renderer.render();
 
-		b2dr.render(world, gamecam.combined);
+		game.batch.begin();
+		mc.draw(game.batch);
+		game.batch.end();
+
+		b2dr.render(world, game.camera.combined);
+
 		stage.act(delta);
 		stage.draw();
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		gameViewPort.update(width, height);
+		game.viewport.update(width, height);
 	}
 
 	@Override
@@ -140,20 +147,12 @@ public class GameScreen implements Screen {
 		renderer.dispose();
 	}
 
-	public World getWorld() {
-		return world;
-	}
-
-	public TiledMap getTiledMap() {
-		return map;
-	}
-
 	public void stagedControls() {
 		/**
 		 * setting up stage here to control the inputs from different platforms
 		 */
 
-		stage = new Stage(gameViewPort);
+		stage = new Stage(game.viewport);
 		skin = new Skin(Gdx.files.internal("ui/neon/neon.json"), new TextureAtlas("ui/neon/neon.atlas"));
 
 		//move pad
@@ -172,5 +171,17 @@ public class GameScreen implements Screen {
 		Gdx.input.setInputProcessor(stage);
 	}
 
+    public World getWorld() {
+        return world;
+    }
+    public TiledMap getTiledMap() {
+        return map;
+    }
+    public int getCount() {
+        return count;
+    }
 
+    public TextureAtlas getIsaac(){
+		return isaac;
+	}
 }

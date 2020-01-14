@@ -20,15 +20,14 @@ public class TBOIGame extends Game{
 	public static SpriteBatch batch;
 	public OrthographicCamera camera;
 
-	Viewport viewport;
+	public Viewport viewport;
 	Sound sound;
 	public Music music;
 	
 	@Override
 	public void create () {
 		camera = new OrthographicCamera();
-		viewport = new FitViewport(DesktopSettings.WIDTH, DesktopSettings.HEIGHT, camera);
-		camera.position.set(viewport.getWorldWidth()/2, viewport.getWorldHeight()/2, 0);
+		viewport = new FitViewport(DesktopSettings.V_WIDTH / 100, DesktopSettings.V_HEIGHT / 100, camera);
 		music = Gdx.audio.newMusic(Gdx.files.internal("sounds/tboi-soundtrack.mp3"));
 		setScreen(new GameScreen(this));
 		batch = new SpriteBatch();
@@ -39,7 +38,6 @@ public class TBOIGame extends Game{
 
 	@Override
 	public void render() {
-		camera.update();
 		super.render();
 	}
 	

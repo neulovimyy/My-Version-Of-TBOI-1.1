@@ -57,7 +57,7 @@ public class TitleScreen implements Screen {
         floatingTitle.setBounds(240, DesktopSettings.HEIGHT/2 + 150, 800,200);
 
         stage = new Stage();
-        skin = new Skin(Gdx.files.internal("ui/classic-ui.json"), new TextureAtlas("ui/classic-ui.atlas"));
+        skin = new Skin(Gdx.files.internal("ui/classic/classic-ui.json"), new TextureAtlas("ui/classic/classic-ui.atlas"));
 
         ImageTextButton play = new ImageTextButton("Hello",skin, MobileSettings.STYLENAME);
         play.addListener(new ClickListener(){

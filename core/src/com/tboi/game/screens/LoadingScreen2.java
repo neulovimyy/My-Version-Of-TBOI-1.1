@@ -14,7 +14,6 @@ import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.TweenManager;
-import sun.security.krb5.internal.crypto.Des;
 
 public class LoadingScreen2 implements Screen {
 

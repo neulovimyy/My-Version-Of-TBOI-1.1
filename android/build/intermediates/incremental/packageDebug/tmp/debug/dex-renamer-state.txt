@@ -1,0 +1,4 @@
+#Thu Jan 09 23:41:58 CST 2020
+base.0=E\:\\OOPGames\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
