@@ -21,9 +21,10 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Array;
 import com.tboi.game.TBOIGame;
+import com.tboi.game.entities.collision.CollisionSettings;
 import com.tboi.game.screens.GameScreen;
-import com.tboi.game.settings.DesktopSettings;
 import com.tboi.game.settings.GameControlSetting;
+import com.tboi.game.worldsetting.CollidingObject;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,9 @@ public class MainCharacter extends Sprite{
     public Body body;
     float duration = 1/60f;
     float timer;
+    float posx, posy;
+
+    TextureRegion region;
 
     public enum Direction {LEFT, RIGHT, DOWN, UP, STEADY}; //enums to determine direction
     public Direction currentState;
@@ -46,32 +50,36 @@ public class MainCharacter extends Sprite{
      */
 
 
-    public MainCharacter(GameScreen game, World world ){
+    public MainCharacter(GameScreen game ){
         super(game.getIsaac().findRegion("isaac-walking"));
 
         this.game = game;
-        this.world = world;
+        this.world = game.getWorld();
 
         frames();
 
         defineMC();// defining body
 
-        setBounds(0,0, 96*3, 64*3);
-
+        region = new TextureRegion(getTexture(), 0, 0, 96, 64);
+        setBounds(200, 200, 9600/ GameControlSetting.PPM2 * 3, 6400f/100 * 3);
         timer = 0;
         currentState = Direction.STEADY;
         previousState = Direction.STEADY;
+
+        posx = getWidth() + 208; //x-coordinate of sprite
+        posy = getHeight() + 120; //y-coordinate of sprite
     }
 
     public void update(float delta) { //positioning the sprite to the body
+        setPosition(posx, posy);
         setRegion(getFacade(delta));
-        setPosition(496, 315);
+
     }
 
     public void defineMC() {
         BodyDef def = new BodyDef();
         def.type = BodyDef.BodyType.DynamicBody;
-        def.position.set(100/100f, 100/100f);
+        def.position.set(176f/100, 100f/100);
 
         body = world.createBody(def);
         PolygonShape shape = new PolygonShape();
@@ -79,6 +87,8 @@ public class MainCharacter extends Sprite{
 
         FixtureDef f = new FixtureDef();
         f.shape = shape;
+        f.filter.categoryBits = CollisionSettings.MC_BIT;
+        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.LAVA_BIT;
         body.createFixture(f).setUserData("body");
 
         CircleShape head = new CircleShape();
@@ -87,8 +97,6 @@ public class MainCharacter extends Sprite{
         f.shape = head;
 
         body.createFixture(f).setUserData("head");
-        /*EdgeShape head = new EdgeShape();
-        head.set(new Vector2(1, 5), new Vector2(9, 9));*/
     }
 
     //method to get the direction Isaac is facing

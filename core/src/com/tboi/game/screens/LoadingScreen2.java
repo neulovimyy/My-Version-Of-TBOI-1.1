@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.tboi.game.TBOIGame;
-import com.tboi.game.settings.DesktopSettings;
+import com.tboi.game.settings.GameControlSetting;
 import com.tboi.game.tween.SpriteTween;
 
 import aurelienribon.tweenengine.BaseTween;
@@ -58,9 +58,9 @@ public class LoadingScreen2 implements Screen {
     @Override
     public void render(float delta) {
 
-        paper.setSize(DesktopSettings.WIDTH, DesktopSettings.HEIGHT);
-        part.setPosition(DesktopSettings.WIDTH/2 - part.getWidth() + 400, DesktopSettings.HEIGHT/2 - part.getHeight() + 100);
-        zid.setPosition(DesktopSettings.WIDTH/2 - zid.getWidth(), DesktopSettings.HEIGHT/2 - zid.getHeight() - 100);
+        paper.setSize(GameControlSetting.WIDTH, GameControlSetting.HEIGHT);
+        part.setPosition(GameControlSetting.WIDTH/2 - part.getWidth() + 400, GameControlSetting.HEIGHT/2 - part.getHeight() + 100);
+        zid.setPosition(GameControlSetting.WIDTH/2 - zid.getWidth(), GameControlSetting.HEIGHT/2 - zid.getHeight() - 100);
 
         Gdx.gl.glClearColor(1,1,1,0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

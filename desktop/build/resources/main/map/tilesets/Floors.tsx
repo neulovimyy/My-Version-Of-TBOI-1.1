@@ -753,6 +753,12 @@
  </tile>
  <tile id="250">
   <image width="32" height="32" source="tiles/lava_0.png"/>
+  <animation>
+   <frame tileid="250" duration="100"/>
+   <frame tileid="251" duration="100"/>
+   <frame tileid="252" duration="100"/>
+   <frame tileid="253" duration="100"/>
+  </animation>
  </tile>
  <tile id="251">
   <image width="32" height="32" source="tiles/lava_1.png"/>
@@ -1370,7 +1376,16 @@
   <image width="32" height="32" source="tiles/white_marble_8.png"/>
  </tile>
  <tile id="456">
+  <properties>
+   <property name="Name" value="name"/>
+  </properties>
   <image width="32" height="32" source="tiles/white_marble_9.png"/>
+  <animation>
+   <frame tileid="149" duration="100"/>
+   <frame tileid="150" duration="100"/>
+   <frame tileid="151" duration="100"/>
+   <frame tileid="152" duration="100"/>
+  </animation>
  </tile>
  <tile id="457">
   <image width="32" height="32" source="tiles/closed_door.png"/>

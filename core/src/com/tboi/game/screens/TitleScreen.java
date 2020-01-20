@@ -17,7 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.tboi.game.TBOIGame;
-import com.tboi.game.settings.DesktopSettings;
+import com.tboi.game.settings.GameControlSetting;
 import com.tboi.game.settings.MobileSettings;
 import com.tboi.game.tween.SpriteTween;
 import aurelienribon.tweenengine.BaseTween;
@@ -53,11 +53,15 @@ public class TitleScreen implements Screen {
         bg = new Sprite(new Texture("pictures/titlescreen.jpg"));
         floatingTitle = new Sprite(new Texture("pictures/tboi-title-screen.png"));
 
-        bg.setSize(DesktopSettings.WIDTH, DesktopSettings.HEIGHT);
-        floatingTitle.setBounds(240, DesktopSettings.HEIGHT/2 + 150, 800,200);
+        bg.setSize(GameControlSetting.WIDTH, GameControlSetting.HEIGHT);
+        floatingTitle.setBounds(240, GameControlSetting.HEIGHT/2 + 150, 800,200);
 
         stage = new Stage();
         skin = new Skin(Gdx.files.internal("ui/classic/classic-ui.json"), new TextureAtlas("ui/classic/classic-ui.atlas"));
+
+        Touchpad touchpad = new Touchpad(0, skin, "default");
+        touchpad.setBounds(200, 200, 200, 200);
+        stage.addActor(touchpad);
 
         ImageTextButton play = new ImageTextButton("Hello",skin, MobileSettings.STYLENAME);
         play.addListener(new ClickListener(){
@@ -78,7 +82,7 @@ public class TitleScreen implements Screen {
                 })));
             }
         });
-        play.setPosition(DesktopSettings.WIDTH/2 - play.getWidth(), DesktopSettings.HEIGHT/2 + play.getHeight());
+        play.setPosition(GameControlSetting.WIDTH/2 - play.getWidth(), GameControlSetting.HEIGHT/2 + play.getHeight());
         stage.addActor(play);
 
         Gdx.input.setInputProcessor(stage);

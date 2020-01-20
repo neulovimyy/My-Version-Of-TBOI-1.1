@@ -11,6 +11,11 @@ import com.tboi.game.screens.GameScreen;
 
 public class ObjectContact implements ContactListener {
 
+
+    /**
+     * Contact to all objects in the game
+     */
+
     World world;
     GameScreen screen;
 
@@ -21,10 +26,16 @@ public class ObjectContact implements ContactListener {
 
     @Override
     public void beginContact(Contact contact) {
-        Fixture A = contact.getFixtureA();
-        Fixture B = contact.getFixtureB();
+        Fixture a = contact.getFixtureA();
+        Fixture b = contact.getFixtureB();
 
-        Gdx.app.log("BEGIN",A.toString() + " and "+ B.toString());
+        if(a.getUserData() == "head" || b.getUserData() == "head") {
+            Fixture head = a.getUserData() == "head" ? a : b;
+            Fixture obj = head == a ? b : a;
+            if(obj.getUserData() != null && CollidingObject.class.isAssignableFrom(obj.getUserData().getClass())) {
+                ((CollidingObject) obj.getUserData()).onHeadHit();
+            }
+        }
     }
 
     @Override

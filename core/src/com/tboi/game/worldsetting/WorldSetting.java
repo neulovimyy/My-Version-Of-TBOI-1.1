@@ -9,9 +9,11 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.tboi.game.entities.collision.CollisionSettings;
+import com.tboi.game.entities.terrain.Lava;
 import com.tboi.game.screens.GameScreen;
 
-public class WorldSetting {
+public class WorldSetting{
 
     GameScreen screen;
 
@@ -26,7 +28,7 @@ public class WorldSetting {
     public WorldSetting(GameScreen screen) {
         this.screen = screen;
         this.world = screen.getWorld();
-        this.map = screen.getTiledMap();
+        this.map = screen.getMap();
         defineWorldCollision();
     }
 
@@ -38,13 +40,16 @@ public class WorldSetting {
             def.position.set((rect.getX() + rect.width/2)/100, (rect.getY() + rect.height/2)/100);
 
             body = world.createBody(def);
-
+            fdef.filter.categoryBits = CollisionSettings.WALL_BIT;
             shape.setAsBox(rect.width/2/100 , rect.height/2/100);
             fdef.shape = shape;
 
             body.createFixture(fdef);
         }
 
+        for(MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject .class)){
+            new Lava(screen, object);
+        }
     }
 
 }
