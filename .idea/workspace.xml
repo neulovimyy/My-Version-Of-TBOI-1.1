@@ -9,51 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53eeb260-8267-4da8-af7e-480b8263ed93" name="Default Changelist" comment="added body&#10;reverted map config">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__core_core_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/assets/map/maps/dungeon1-1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/map/maps/dungeon1-1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/assets/map/tilesets/Floors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/map/tilesets/Floors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/entities/bullet/silvertear2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/map/primary-tiles.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/classic-ui.atlas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/classic-ui.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/classic-ui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/font-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/font-title-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/.transforms/07ac73497c1a32e2563187dbd6a140bb/core-1.0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/.transforms/07ac73497c1a32e2563187dbd6a140bb/core-1.0/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/TitleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/settings/DesktopSettings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/build/resources/main/map/maps/dungeon1-1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build/resources/main/map/maps/dungeon1-1.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/build/resources/main/map/tilesets/Floors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build/resources/main/map/tilesets/Floors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/src/com/tboi/game/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/tboi/game/desktop/DesktopLauncher.java" afterDir="false" />
-    </list>
+    <list default="true" id="53eeb260-8267-4da8-af7e-480b8263ed93" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="121" column="20" lean-forward="true" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3564#3565#0" expanded="true" />
@@ -507,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579386385683</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added HUD&#10;added bullet (under construction)&#10;polished gamescreen">
+      <created>1579491380588</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579491380588</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -521,7 +484,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18456884" />
@@ -532,13 +494,13 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.32850242" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.32850242" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32850242" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32850242" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="6" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3236715" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32850242" />
       <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" />
@@ -637,7 +599,8 @@
     <MESSAGE value="added door&#10;disassemble isaac texture" />
     <MESSAGE value="added ppm" />
     <MESSAGE value="added body&#10;reverted map config" />
-    <option name="LAST_COMMIT_MESSAGE" value="added body&#10;reverted map config" />
+    <MESSAGE value="added HUD&#10;added bullet (under construction)&#10;polished gamescreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="added HUD&#10;added bullet (under construction)&#10;polished gamescreen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/screens/InGameLoadingScreens.java">
@@ -963,8 +926,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+        <state relative-caret-position="238">
+          <caret line="121" column="20" lean-forward="true" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3564#3565#0" expanded="true" />
