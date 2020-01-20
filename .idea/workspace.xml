@@ -9,7 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53eeb260-8267-4da8-af7e-480b8263ed93" name="Default Changelist" comment="added body&#10;reverted map config">
+    <list default="true" id="53eeb260-8267-4da8-af7e-480b8263ed93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -20,39 +20,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__core_core_1_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/assets/map/maps/dungeon1-1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/map/maps/dungeon1-1.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/assets/map/tilesets/Floors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/map/tilesets/Floors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/5bFyCNhAqOIBh4ZD7j+J8RAI2f0=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/entities/bullet/silvertear2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/map/primary-tiles.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/classic-ui.atlas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/classic-ui.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/classic-ui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/font-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/merged_assets/debug/out/ui/font-title-export.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/.transforms/07ac73497c1a32e2563187dbd6a140bb/core-1.0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/.transforms/07ac73497c1a32e2563187dbd6a140bb/core-1.0/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/assets/map/tilesets/test.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/TitleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/settings/DesktopSettings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desktop/build/resources/main/map/maps/dungeon1-1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build/resources/main/map/maps/dungeon1-1.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desktop/build/resources/main/map/tilesets/Floors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build/resources/main/map/tilesets/Floors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/src/com/tboi/game/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/tboi/game/desktop/DesktopLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/build/resources/main/map/tilesets/test.tmx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,39 +65,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3564#3565#0" expanded="true" />
-                <element signature="e#3593#3594#0" expanded="true" />
-                <element signature="e#3625#3626#0" expanded="true" />
-                <element signature="e#3651#3652#0" expanded="true" />
-                <element signature="e#3738#3739#0" expanded="true" />
-                <element signature="e#3769#3770#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java">
+        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="357">
+              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
-                <element signature="e#1781#1782#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,67 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-481">
-              <caret line="103" column="25" lean-forward="true" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1916#1917#0" expanded="true" />
-                <element signature="e#1938#1939#0" expanded="true" />
-                <element signature="e#2479#2480#0" expanded="true" />
-                <element signature="e#2498#2499#0" expanded="true" />
-                <element signature="e#1020#1021#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1214#1215#0" expanded="true" />
-                <element signature="e#1239#1240#0" expanded="true" />
-                <element signature="e#1270#1271#0" expanded="true" />
-                <element signature="e#1298#1299#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4112#4113#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+            <state relative-caret-position="493">
+              <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,8 +98,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="697">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Chest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -228,6 +169,7 @@
         <option value="neulovimyy" />
       </list>
     </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
@@ -256,15 +198,18 @@
         <option value="$PROJECT_DIR$/core/src/com/tboi/game/screens/LoadingScreen2.java" />
         <option value="$PROJECT_DIR$/core/src/com/tboi/game/screens/TitleScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java" />
         <option value="$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java" />
         <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/Chest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Chest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Door.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java" />
       </list>
     </option>
   </component>
@@ -283,8 +228,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,46 +259,14 @@
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOPGames" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOPGames" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOPGames" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOPGames" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="worldsetting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOPGames" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOPGames" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="desktop" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOPGames" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOPGames" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="desktop" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOPGames" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOPGames" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="desktop" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="desktop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,6 +290,7 @@
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.tboi.game.worldsetting" />
+      <recent name="com.tboi.game.entities.terrain" />
       <recent name="com.tboi.game.screens" />
     </key>
   </component>
@@ -507,7 +419,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579386385683</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added HUD&#10;added bullet (under construction)&#10;polished gamescreen">
+      <created>1579491380588</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579491380588</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added HUD, added contactlistener, animation in mc, collision tags and filters">
+      <created>1579491755782</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579491755783</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -524,7 +450,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18456884" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18456884" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -532,7 +458,7 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.32850242" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32850242" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32850242" />
@@ -637,37 +563,11 @@
     <MESSAGE value="added door&#10;disassemble isaac texture" />
     <MESSAGE value="added ppm" />
     <MESSAGE value="added body&#10;reverted map config" />
-    <option name="LAST_COMMIT_MESSAGE" value="added body&#10;reverted map config" />
+    <MESSAGE value="added HUD&#10;added bullet (under construction)&#10;polished gamescreen" />
+    <MESSAGE value="added HUD, added contactlistener, animation in mc, collision tags and filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="added HUD, added contactlistener, animation in mc, collision tags and filters" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/screens/InGameLoadingScreens.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/tween/SpriteTween.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.10/384a26163490e0dca4e3a1c00d4ae6284d785da5/gdx-box2d-1.9.10-sources.jar!/com/badlogic/gdx/physics/box2d/Body.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/map/samuel-legner-dungeon-tileset.tsx" />
-    <entry file="file://$PROJECT_DIR$/android/assets/map/samuel-legner-dungeon-tileset.jpg" />
-    <entry file="file://$PROJECT_DIR$/android/assets/map/Floor1.tmx" />
-    <entry file="file://$PROJECT_DIR$/android/assets/map/untitled.tmx" />
     <entry file="file://$PROJECT_DIR$/android/assets/ui/neon/font-export.fnt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -790,27 +690,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/settings/DesktopSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/settings/DesktopSettings.java" />
     <entry file="file://$PROJECT_DIR$/desktop/src/com/tboi/game/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -847,16 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/lang/Object.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -871,89 +745,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-481">
-          <caret line="103" column="25" lean-forward="true" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#2479#2480#0" expanded="true" />
-            <element signature="e#2498#2499#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1781#1782#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/settings/GameControlSetting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4112#4113#0" expanded="true" />
@@ -961,10 +756,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/map/tilesets/chest.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/map/tilesets/Floors.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/map/tilesets/test.tmx" />
+    <entry file="file://$PROJECT_DIR$/android/assets/map/maps/dungeon1-1.tmx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/hud/GameHUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="115" column="29" lean-forward="true" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+        <state relative-caret-position="250">
+          <caret line="129" column="35" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3564#3565#0" expanded="true" />
@@ -973,6 +790,113 @@
             <element signature="e#3651#3652#0" expanded="true" />
             <element signature="e#3738#3739#0" expanded="true" />
             <element signature="e#3769#3770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/Chest.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/projectiles/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1781#1782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/collision/CollisionSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/TBOIGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/WorldSetting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Chest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Lava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/terrain/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/ObjectContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/entities/MainCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tboi/game/worldsetting/CollidingObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

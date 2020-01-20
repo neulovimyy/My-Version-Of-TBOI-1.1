@@ -88,7 +88,8 @@ public class MainCharacter extends Sprite{
         FixtureDef f = new FixtureDef();
         f.shape = shape;
         f.filter.categoryBits = CollisionSettings.MC_BIT;
-        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.LAVA_BIT;
+        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.LAVA_BIT |
+            CollisionSettings.DOOR_BIT | CollisionSettings.CHEST_BIT;
         body.createFixture(f).setUserData("body");
 
         CircleShape head = new CircleShape();
