@@ -1,5 +1,7 @@
 package com.tboi.game.worldsetting;
 
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -25,16 +27,20 @@ public class WorldSetting{
     FixtureDef fdef = new FixtureDef();
     TiledMap map;
     Body body;
-
+    SpriteBatch batch;
+    ParticleEffect pe;
 
     public WorldSetting(GameScreen screen) {
         this.screen = screen;
         this.world = screen.getWorld();
         this.map = screen.getMap();
+        this.batch = screen.game.batch;
+        this.pe = screen.getPe();
         defineWorldCollision();
     }
 
     private void defineWorldCollision() {
+
         for(MapObject object : map.getLayers().get(3).getObjects().getByType(RectangleMapObject .class)){ //ground/wall
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
@@ -60,7 +66,6 @@ public class WorldSetting{
         for(MapObject object : map.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)){ //lava
             new Chest(screen, object);
         }
-
 
     }
 

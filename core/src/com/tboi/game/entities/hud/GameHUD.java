@@ -1,24 +1,33 @@
 package com.tboi.game.entities.hud;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
+import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.tboi.game.TBOIGame;
 import com.tboi.game.settings.GameControlSetting;
 
+import java.util.ArrayList;
+
 public class GameHUD implements Disposable {
 
+    private static int health;
     public Stage stage;
     Viewport viewport;
     TBOIGame game;
@@ -26,23 +35,58 @@ public class GameHUD implements Disposable {
     Skin skin;
     private Touchpad move, attack;
     public float count;
-    public Integer mcScore, worldCount, minute, hour, second;
+    public static Integer mcScore;
+    public Integer worldCount;
+    public Integer minute;
+    public Integer hour;
+    public Integer second;
+    public Integer key;
+    public Integer bomb;
+    public Integer coin;
     String hr,min,sec;
+    ArrayList<Image> goldHearts, redHeart, boneHeart;
+    Image goldHeart;
+    Label countUpTimer;
+    static Label score;
+    Label keyCount;
+    Label coinCount;
+    Label bombCount;
+    Label floor;
 
-    Label countUpTimer, score, keyCount, cointCount, bombCount, floor;
-    Label damage, AS, projSpeed, movement, luck;
+    static Label hitpoints;
+
+    public static boolean isDead;
 
     public GameHUD (SpriteBatch batch) {
-        worldCount = 0; minute = 0; hour = 0; second = 0;
-        min = null; sec = null;
+        worldCount = 0; minute = 0; hour = 0; second = 0; health = 10;
+        min = null; sec = null; key = 0; bomb = 0; coin = 0;
         mcScore = 0;
         viewport = new FitViewport(GameControlSetting.WIDTH, GameControlSetting.HEIGHT, new OrthographicCamera());
         stage = new Stage(viewport, batch);
+        isDead = false;
 
         skin = new Skin(Gdx.files.internal("ui/classic/classic-ui.json"), new TextureAtlas("ui/classic/classic-ui.atlas"));
         Table entities = new Table(skin);
         entities.left();
         entities.setFillParent(true);
+
+        //styles
+        Label.LabelStyle style,style1,style2; style = new Label.LabelStyle(); style1 = new Label.LabelStyle(); style2 = new Label.LabelStyle();
+        FreeTypeFontGenerator gen = new FreeTypeFontGenerator(Gdx.files.internal("font/upheavtt.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter param = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        param.color = Color.WHITE; param.size = 35;
+        style.font = gen.generateFont(param);
+        param.color = Color.WHITE; param.size = 60;
+        style1.font = gen.generateFont(param);
+        param.color = Color.LIGHT_GRAY; param.size = 40;
+        style2.font = gen.generateFont(param);
+
+        goldHeart = new Image();
+        goldHeart.setDrawable(new SpriteDrawable(new Sprite(new Texture("pictures/hearts/gold-heart.png"))));
+
+        goldHearts = new ArrayList<Image>();
+        goldHearts.add(goldHeart);
+        goldHearts.add(goldHeart);
 
         Table floorLabel = new Table(skin);
         floorLabel.top().right();
@@ -52,29 +96,31 @@ public class GameHUD implements Disposable {
         time.setFillParent(true);
         time.center().top();
 
-        score = new Label(String.format("%05d", mcScore), skin);
-        floor = new Label("Floor 1-1", skin);
-        countUpTimer = new Label("", skin);
+        score = new Label(String.format("%05d", mcScore), style1);
+        floor = new Label("Floor 1-1", style);
+        countUpTimer = new Label("", style1);
 
         time.add(countUpTimer).expandX().padTop(10); //add time and score up center
-        time.row(); time.add(score).expandX();
-
+        time.row(); time.add(score).expandX(); time.row();
         stage.addActor(time); //add time and count-up timer to stage
 
         floorLabel.add(floor).padRight(120).padTop(10);//add level to top right
         stage.addActor(floorLabel);
 
-        luck = new Label("Luck: 10%", skin); luck.setColor(Color.WHITE);
-        damage = new Label("Damage: 5", skin); damage.setColor(Color.WHITE);
-        movement = new Label("Movement: 5",skin); movement.setColor(Color.WHITE);
-        entities.add(luck).padLeft(30).padTop(-20); entities.row(); entities.add(damage).padLeft(30); entities.row(); entities.add(movement).padLeft(30);
-        stage.addActor(entities);
+        //luck = new Label("Luck: 10%", style2);
+        //damage = new Label("Damage: 5", style2);
+        //movement = new Label("Movement: 5",style2);
+        hitpoints = new Label("Hitpoints :"+health, style2);
+        //entities.add(luck); entities.row(); entities.add(damage); entities.row(); entities.add(movement); entities.row();
+        entities.add(hitpoints); stage.addActor(entities);
 
         move = new Touchpad(0, skin, "default");
+        move.setColor(Color.BLUE);
         move.setBounds(50, 50, 200, 200);
         stage.addActor(move);
 
         attack = new Touchpad(0, skin, "default");
+        attack.setColor(Color.RED);
         attack.setBounds(1030, 50, 200, 200);
         stage.addActor(attack);
 
@@ -87,10 +133,44 @@ public class GameHUD implements Disposable {
         stage.addActor(switchItem);
 
         ImageTextButton pause = new ImageTextButton("||", skin);
+        pause.setColor(Color.CORAL);
         pause.setBounds(1150, 630, 50, 50);
+        if(Gdx.app.getType() == Application.ApplicationType.Android){
+            button.setColor(button.getColor().r, button.getColor().g, button.getColor().b, 1);
+            switchItem.setColor(switchItem.getColor().r, switchItem.getColor().g, switchItem.getColor().b, 1);
+            pause.setColor(pause.getColor().r, pause.getColor().g, pause.getColor().b, 1);
+        } else {
+            button.setColor(button.getColor().r, button.getColor().g, button.getColor().b, 0);
+            switchItem.setColor(switchItem.getColor().r, switchItem.getColor().g, switchItem.getColor().b, 0);
+            pause.setColor(pause.getColor().r, pause.getColor().g, pause.getColor().b, 0);
+        }
         stage.addActor(pause);
 
         Gdx.input.setInputProcessor(stage);
+    }
+
+    public static void reduceHealth(int i) {
+
+        health -= i;
+        if(health == 0) {
+            isDead = true;
+        }
+
+        hitpoints.setText("Hitpoints: "+health);
+
+    }
+
+    public static void addHealth(int i){
+        health += i;
+        hitpoints.setText("Hitpoints: "+health);
+    }
+
+    public static void addScore(int i) {
+        mcScore += i;
+        if(mcScore % 2500 == 0 && health > 0) {
+            addHealth(1);
+        }
+        score.setText(String.format("%05d", mcScore));
     }
 
     public Touchpad getAttack() {
@@ -105,7 +185,7 @@ public class GameHUD implements Disposable {
         stage.dispose();
     }
 
-    public void update(float delta) { //crude timer without separator
+    public void update(float delta) { //timer update
         count += delta;
         if(count >= 1){
             second++;
@@ -130,5 +210,9 @@ public class GameHUD implements Disposable {
             countUpTimer.setText("Time: " +hour+":"+min+":"+sec);
             count = 0;
         }
+    }
+
+    public static boolean isIsDead() {
+        return isDead;
     }
 }

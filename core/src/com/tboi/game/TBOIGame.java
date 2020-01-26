@@ -9,9 +9,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.tboi.game.entities.levels.Level1;
+import com.tboi.game.screens.GameOverScreen;
 import com.tboi.game.screens.GameScreen;
 import com.tboi.game.screens.LoadingScreen;
 import com.tboi.game.screens.TitleScreen;
+import com.tboi.game.screens.VictoryScreen;
 import com.tboi.game.settings.GameControlSetting;
 
 public class TBOIGame extends Game{
@@ -30,8 +33,8 @@ public class TBOIGame extends Game{
 		batch = new SpriteBatch();
 		music.setLooping(true);
 		music.setVolume(0.5f);
-		//music.play();
-		setScreen(new GameScreen(this));
+		music.play();
+		setScreen(new Level1(this));
 	}
 
 	@Override

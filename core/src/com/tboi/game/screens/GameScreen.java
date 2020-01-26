@@ -2,9 +2,11 @@ package com.tboi.game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.MapObject;
@@ -24,19 +26,24 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.tboi.game.TBOIGame;
+import com.tboi.game.ai.SteeringEntity;
 import com.tboi.game.entities.MainCharacter;
+import com.tboi.game.entities.collision.CollisionSettings;
 import com.tboi.game.entities.hud.GameHUD;
 import com.tboi.game.entities.projectiles.Bullet;
 import com.tboi.game.settings.GameControlSetting;
 import com.tboi.game.worldsetting.ObjectContact;
 import com.tboi.game.worldsetting.WorldSetting;
+import box2dLight.PointLight;
+import box2dLight.PositionalLight;
+import box2dLight.RayHandler;
 
 public class GameScreen implements Screen {
 
     private TextureAtlas isaac;
-    private TiledMap map;
-    private World world;
-    private TBOIGame game;
+    public TiledMap map;
+    protected World world;
+    public TBOIGame game;
     public OrthographicCamera gameCam;
     public Viewport viewport;
     public OrthogonalTiledMapRenderer renderer;
@@ -44,35 +51,46 @@ public class GameScreen implements Screen {
     GameControlSetting control;
     Box2DDebugRenderer b2dr;
     WorldSetting setting;
-    MainCharacter mc;
-    Bullet bullet;
-
+    public MainCharacter mc;
+    RayHandler handler;
+    ParticleEffect pe;
+    PointLight light;
+    SteeringEntity mainChar, chest;
     public GameScreen(TBOIGame game){
         this.game = game;
         gameCam = new OrthographicCamera();
+
         viewport = new FitViewport(352 / GameControlSetting.PPM2, 214 / GameControlSetting.PPM2, gameCam);
+        world = new World(new Vector2(0, 0), true);
 
         isaac = new TextureAtlas("entities/isaac/tr.pack");
+        mc = new MainCharacter(this);
+        mainChar = new SteeringEntity(mc.body, 10);
+
+        pe = new ParticleEffect();
+        pe.load(Gdx.files.internal("particles/fire"),Gdx.files.internal(""));
+
         hud = new GameHUD(game.batch);
 
-        map = new TmxMapLoader().load("map/maps/dungeon1-1.tmx");//map
-        renderer = new OrthogonalTiledMapRenderer(map, GameControlSetting.PPM1);
+        //map = new TmxMapLoader().load("map/maps/dungeon1-1.tmx");
+        renderer = new OrthogonalTiledMapRenderer(null, 1f/100);
         gameCam.position.set(viewport.getWorldWidth()/2, viewport.getWorldHeight()/2, 0);
 
-        world = new World(new Vector2(0, 0), true);
         b2dr = new Box2DDebugRenderer();
 
-        setting = new WorldSetting(this);
-
-        mc = new MainCharacter(this);
-
-
+        handler = new RayHandler(world);
+        handler.setAmbientLight(0.001f);
+        light = new PointLight(handler, 32);
+        light.setSoft(true);
+        light.attachToBody(mc.body);
+        light.setPosition(mc.posx, mc.posy + 2);
+        light.setColor(Color.GOLDENROD);
         world.setContactListener(new ObjectContact(this));
+        control = new GameControlSetting();
     }
 
     @Override
     public void show() {
-        control = new GameControlSetting();
     }
 
     @Override
@@ -82,31 +100,39 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(1,1,1,0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        renderer.render();
-        b2dr.render(world, gameCam.combined);
+        b2dr.render(world, gameCam.combined); //world render
+        renderer.render();                    //map render
 
-        game.batch.begin();
+        game.batch.begin();                   //sprite render
+        pe.draw(game.batch);
         mc.draw(game.batch);
         game.batch.end();
 
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
-        hud.stage.draw();
+        handler.setCombinedMatrix(gameCam.combined);
+        handler.updateAndRender();                    //lights render
+        if(pe.isComplete()) pe.reset();
+
+
+        if(hud.isIsDead()) {                //is dead execution
+            game.setScreen(new GameOverScreen(game));
+        }
+
+        game.batch.setProjectionMatrix(hud.stage.getCamera().combined); // camera set to hud
+        hud.stage.draw();                  //hud render
     }
 
     public void update(float delta) {
-        control.platformControlConfig(mc, hud.getMove(), hud.getAttack());
 
-        world.step(1/60f, 6, 2);
-
-        mc.update(delta);
-
-        hud.update(delta);
-
-        gameCam.position.set(new Vector2(mc.body.getPosition().x, mc.body.getPosition().y), 0);
-
+        control.platformControlConfig(mc, hud.getMove(), hud.getAttack()); //controls
+        world.step(1/60f, 6, 2); //draw world
+        mc.update(delta); hud.update(delta); //mc, hud, lights
+        pe.getEmitters().first().setPosition(mc.posx, mc.posy);
+        pe.start();
+        gameCam.position.set(new Vector2(mc.body.getPosition().x, mc.body.getPosition().y), 0); //camera positions
         gameCam.update();
-
         renderer.setView(gameCam);
+        light.update();
+        pe.update(delta);
     }
 
     @Override
@@ -136,6 +162,7 @@ public class GameScreen implements Screen {
         b2dr.dispose();
         world.dispose();
         hud.dispose();
+        handler.dispose();
     }
 
     public TextureAtlas getIsaac() {
@@ -146,5 +173,9 @@ public class GameScreen implements Screen {
     }
     public World getWorld() {
         return world;
+    }
+
+    public ParticleEffect getPe() {
+        return pe;
     }
 }

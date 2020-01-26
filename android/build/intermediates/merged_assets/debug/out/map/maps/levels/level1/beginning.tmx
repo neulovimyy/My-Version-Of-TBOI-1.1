@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="11" height="7" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="22">
+ <tileset firstgid="1" source="../../../tilesets/Floors.tsx"/>
+ <layer id="1" name="bg" width="11" height="7">
+  <data encoding="base64" compression="zlib">
+   eAFbyMjAsHAUkxQGALPyMLs=
+  </data>
+ </layer>
+ <layer id="2" name="gfx" width="11" height="7">
+  <data encoding="base64" compression="zlib">
+   eAHzZWRo8CEC+zIyMHgxMhzwZGBgIISB6hyGmlqg/w4Aw8GBEAaqcwAAwCojpg==
+  </data>
+ </layer>
+ <layer id="3" name="obj" width="11" height="7">
+  <data encoding="base64" compression="zlib">
+   eAFjYCANnGRkYCCEYSbWMjIkgNgGTBARkD4QgPFh8iAxZDaIjw6ckARgan9DxWDmwfgweZA0SIwQhhpDNAUAzOYX3A==
+  </data>
+ </layer>
+ <objectgroup id="4" name="walls">
+  <object id="1" x="320" y="6" width="25" height="212"/>
+  <object id="2" x="289" y="127" width="31" height="33"/>
+  <object id="3" x="289" y="65" width="31" height="31"/>
+  <object id="4" x="32" y="6" width="288" height="26"/>
+  <object id="5" x="8" y="6" width="24" height="212"/>
+  <object id="6" x="8" y="191" width="337" height="27"/>
+  <object id="9" x="32" y="64" width="32" height="96"/>
+ </objectgroup>
+ <objectgroup id="7" name="door">
+  <object id="14" x="289" y="96" width="31" height="32"/>
+ </objectgroup>
+ <objectgroup id="5" name="lava">
+  <object id="10" x="32" y="160" width="288" height="32"/>
+  <object id="11" x="96" y="128" width="32" height="32"/>
+  <object id="12" x="224" y="128" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup id="6" name="chest">
+  <object id="15" x="227" y="68" width="24" height="24"/>
+  <object id="20" x="163" y="134" width="22" height="22"/>
+  <object id="21" x="99" y="70" width="23" height="22"/>
+ </objectgroup>
+</map>

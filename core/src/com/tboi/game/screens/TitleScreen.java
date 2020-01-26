@@ -61,9 +61,9 @@ public class TitleScreen implements Screen {
 
         Touchpad touchpad = new Touchpad(0, skin, "default");
         touchpad.setBounds(200, 200, 200, 200);
-        stage.addActor(touchpad);
+        //stage.addActor(touchpad);
 
-        ImageTextButton play = new ImageTextButton("Hello",skin, MobileSettings.STYLENAME);
+        ImageTextButton play = new ImageTextButton("PLAY",skin, MobileSettings.STYLENAME);
         play.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y){
@@ -82,7 +82,7 @@ public class TitleScreen implements Screen {
                 })));
             }
         });
-        play.setPosition(GameControlSetting.WIDTH/2 - play.getWidth(), GameControlSetting.HEIGHT/2 + play.getHeight());
+        play.setBounds(540, 310, 200, 100);
         stage.addActor(play);
 
         Gdx.input.setInputProcessor(stage);
