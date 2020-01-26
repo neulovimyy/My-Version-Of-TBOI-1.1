@@ -1,60 +1,56 @@
 package com.tboi.game.entities;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.PolygonRegion;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
-import com.badlogic.gdx.physics.box2d.EdgeShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Array;
-import com.tboi.game.TBOIGame;
 import com.tboi.game.entities.collision.CollisionSettings;
 import com.tboi.game.screens.GameScreen;
 import com.tboi.game.settings.GameControlSetting;
-import com.tboi.game.worldsetting.CollidingObject;
-
-import java.util.ArrayList;
 
 public class MainCharacter extends Sprite{
 
-    World world;
+    private World world;
     GameScreen game;
     Animation<TextureRegion> up, down, left, right, steady;
-    public Body body;
+    public static Body body;
     float duration = 1/60f;
     float timer;
-    float posx, posy;
+    public float posx;
+    public float posy;
 
     TextureRegion region;
+
+    public void teleport() {
+        body.setTransform(new Vector2(500/100f, 100/100f), body.getAngle());
+    }
 
     public enum Direction {LEFT, RIGHT, DOWN, UP, STEADY}; //enums to determine direction
     public Direction currentState;
     public Direction previousState;
-
+    boolean isTeleported;
+    TiledMap map;
+    public FixtureDef f;
     /**
      * Class for MC
      *
      */
 
-
     public MainCharacter(GameScreen game ){
         super(game.getIsaac().findRegion("isaac-walking"));
-
         this.game = game;
-        this.world = game.getWorld();
+        this.map = game.getMap();
+        this.setWorld(game.getWorld());
 
         frames();
 
@@ -73,31 +69,42 @@ public class MainCharacter extends Sprite{
     public void update(float delta) { //positioning the sprite to the body
         setPosition(posx, posy);
         setRegion(getFacade(delta));
-
     }
 
     public void defineMC() {
         BodyDef def = new BodyDef();
         def.type = BodyDef.BodyType.DynamicBody;
-        def.position.set(176f/100, 100f/100);
+        def.position.set(176f/100, 124f/100);
+        body = getWorld().createBody(def);
 
-        body = world.createBody(def);
         PolygonShape shape = new PolygonShape();
         shape.setAsBox(7f/100, 3f/100);
 
-        FixtureDef f = new FixtureDef();
+        f = new FixtureDef();
         f.shape = shape;
         f.filter.categoryBits = CollisionSettings.MC_BIT;
-        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.LAVA_BIT |
-            CollisionSettings.DOOR_BIT | CollisionSettings.CHEST_BIT;
-        body.createFixture(f).setUserData("body");
+        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.DOOR_BIT | CollisionSettings.CHEST_BIT | CollisionSettings.DESTROYED_LAVA_BIT;
+        body.createFixture(f).setUserData(this);
 
         CircleShape head = new CircleShape();
         head.setPosition(new Vector2(0, 12f/100));
         head.setRadius(10f/100);
         f.shape = head;
 
-        body.createFixture(f).setUserData("head");
+        body.createFixture(f).setUserData(this);
+    }
+
+    public void inflictDamage(){
+        Gdx.app.log("Damage", "Inflicted");
+    }
+
+    public void breakChest() {
+
+    }
+
+    public TiledMapTileLayer.Cell thirdLayer() {
+        TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(2);
+        return layer.getCell((int)(body.getPosition().x * 100f) / 32, (int) (body.getPosition().y * 100f) / 32);
     }
 
     //method to get the direction Isaac is facing
@@ -123,11 +130,11 @@ public class MainCharacter extends Sprite{
             }
     }
 
+
+
     public TextureRegion getFacade(float delta) {
         currentState = getDirection();
-
         TextureRegion region;
-
         switch (currentState){
             case DOWN:
                 region = down.getKeyFrame(timer, true);
@@ -157,29 +164,41 @@ public class MainCharacter extends Sprite{
         frame.add(new TextureRegion(getTexture(), 0, 64, 96,  64));
         frame.add(new TextureRegion(getTexture(), 0, 0, 96,  64));
         frame.add(new TextureRegion(getTexture(), 96, 64, 96,  64));
-        down = new Animation(0.3f, frame);
+        down = new Animation(0.1f, frame);
         frame.clear();
 
         frame.add(new TextureRegion(getTexture(), 0, 0, 96,  64));
-        steady = new Animation<TextureRegion>(0.5f, frame);
+        steady = new Animation<TextureRegion>(0.1f, frame);
         frame.clear();
 
         frame.add(new TextureRegion(getTexture(), 96, 0, 96,  64));
         frame.add(new TextureRegion(getTexture(), 192, 64, 96,  64));;
         frame.add(new TextureRegion(getTexture(), 192, 0, 96,  64));
-        left = new Animation<TextureRegion>(0.3f, frame);
+        left = new Animation<TextureRegion>(0.1f, frame);
         frame.clear();
 
         frame.add(new TextureRegion(getTexture(), 288, 64, 96,  64));
         frame.add(new TextureRegion(getTexture(), 288, 0, 96,  64));
         frame.add(new TextureRegion(getTexture(), 384, 64, 96,  64));
-        right = new Animation<TextureRegion>(0.3f, frame);
+        right = new Animation<TextureRegion>(0.1f, frame);
         frame.clear();
 
         frame.add(new TextureRegion(getTexture(), 384, 0, 96,  64));
         frame.add(new TextureRegion(getTexture(), 480, 64, 96,  64));
         frame.add(new TextureRegion(getTexture(), 480, 0, 96,  64));
-        up = new Animation<TextureRegion>(0.3f, frame);
+        up = new Animation<TextureRegion>(0.1f, frame);
         frame.clear();
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
+
+    public float getTimer() {
+        return timer;
     }
 }

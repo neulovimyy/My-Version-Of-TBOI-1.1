@@ -447,6 +447,14 @@
  </tile>
  <tile id="148">
   <image width="32" height="32" source="tiles/floor_vines_6_old.png"/>
+  <animation>
+   <frame tileid="111" duration="100"/>
+   <frame tileid="112" duration="100"/>
+   <frame tileid="113" duration="100"/>
+   <frame tileid="114" duration="100"/>
+   <frame tileid="115" duration="100"/>
+   <frame tileid="116" duration="100"/>
+  </animation>
  </tile>
  <tile id="149">
   <image width="32" height="32" source="tiles/frozen_0.png"/>

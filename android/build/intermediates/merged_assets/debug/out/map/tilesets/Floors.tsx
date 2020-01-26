@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.1" name="Floors" tilewidth="32" tileheight="32" tilecount="458" columns="0">
+<tileset version="1.2" tiledversion="1.3.1" name="Floors" tilewidth="32" tileheight="32" tilecount="464" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="32" height="32" source="tiles/acidic_floor_0.png"/>
@@ -447,6 +447,14 @@
  </tile>
  <tile id="148">
   <image width="32" height="32" source="tiles/floor_vines_6_old.png"/>
+  <animation>
+   <frame tileid="111" duration="100"/>
+   <frame tileid="112" duration="100"/>
+   <frame tileid="113" duration="100"/>
+   <frame tileid="114" duration="100"/>
+   <frame tileid="115" duration="100"/>
+   <frame tileid="116" duration="100"/>
+  </animation>
  </tile>
  <tile id="149">
   <image width="32" height="32" source="tiles/frozen_0.png"/>
@@ -1389,5 +1397,23 @@
  </tile>
  <tile id="457">
   <image width="32" height="32" source="tiles/closed_door.png"/>
+ </tile>
+ <tile id="559">
+  <image width="29" height="29" source="tiles/chest_03.png"/>
+ </tile>
+ <tile id="560">
+  <image width="29" height="31" source="tiles/chest_05.png"/>
+ </tile>
+ <tile id="561">
+  <image width="29" height="28" source="tiles/chest_07.png"/>
+ </tile>
+ <tile id="562">
+  <image width="29" height="31" source="tiles/chest_08.png"/>
+ </tile>
+ <tile id="563">
+  <image width="29" height="28" source="tiles/chest_10.png"/>
+ </tile>
+ <tile id="564">
+  <image width="29" height="32" source="tiles/chest_11.png"/>
  </tile>
 </tileset>

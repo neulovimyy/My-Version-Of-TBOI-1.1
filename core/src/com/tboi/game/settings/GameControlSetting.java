@@ -75,25 +75,29 @@ public class GameControlSetting {
         } else {
             //if platform = desktop, remove all on-screen controller then set controls to keyboard
 
-            move.setColor(move.getColor().r, move.getColor().g, move.getColor().b, 1);
-            attack.setColor(move.getColor().r, move.getColor().g, move.getColor().b, 1);
+            move.setColor(move.getColor().r, move.getColor().g, move.getColor().b, 0);
+            attack.setColor(move.getColor().r, move.getColor().g, move.getColor().b, 0);
 
+            float X; float Y;
             if(Gdx.input.isKeyPressed(Input.Keys.D)){
-                mc.body.applyLinearImpulse(new Vector2( 0.5f/100,0f),mc.body.getWorldCenter(),true);
-                setting.setCount(3);
+                X = 0.5f;
+            } else if(Gdx.input.isKeyPressed(Input.Keys.A)){
+                X = -0.5f;
+            } else {
+                X = 0;
             }
-            if(Gdx.input.isKeyPressed(Input.Keys.A)){
-                mc.body.applyLinearImpulse(new Vector2(-0.5f/100,0f),mc.body.getWorldCenter(),true);
-                setting.setCount(2);
-            }
+
             if(Gdx.input.isKeyPressed(Input.Keys.W)) {
-                mc.body.applyLinearImpulse(new Vector2(0,0.5f/100),mc.body.getWorldCenter(),true);
-                setting.setCount(1);
+                Y = 0.5f;
+            } else if(Gdx.input.isKeyPressed(Input.Keys.S)){
+                Y = -0.5f;
+            } else {
+                Y = 0;
             }
-            if(Gdx.input.isKeyPressed(Input.Keys.S)){
-                mc.body.applyLinearImpulse(new Vector2(0,-0.5f/100),mc.body.getWorldCenter(),true);
-                setting.setCount(0);
-            }
+            mc.body.applyLinearImpulse(
+                    X - mc.body.getLinearVelocity().x * mc.body.getMass(),
+                    Y - mc.body.getLinearVelocity().y * mc.body.getMass(),
+                    mc.body.getWorldCenter().x, mc.body.getWorldCenter().y, true);
         }
     }
 
