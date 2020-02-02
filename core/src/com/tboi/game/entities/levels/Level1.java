@@ -21,7 +21,6 @@ public class Level1 extends Level {
         renderer.setMap(map);
         setting = new WorldSetting(this);
         mainChar = new SteeringEntity(mc.body, 10);
-
     }
 
 }

@@ -1,6 +1,7 @@
 package com.tboi.game.entities.terrain;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
 import com.tboi.game.entities.collision.CollisionSettings;
@@ -13,6 +14,7 @@ public class Lava extends CollidingObject {
     public final int LAVA = 251;
     public Lava(GameScreen game, MapObject object){
         super(game, object);
+        object.setColor(Color.CORAL);
         fixture.setUserData(this);
         setFilter(CollisionSettings.DESTROYED_LAVA_BIT);
     }
@@ -23,7 +25,6 @@ public class Lava extends CollidingObject {
         setFilter(CollisionSettings.DESTROYED_LAVA_BIT);
     }
 
-    @Override
     public void onBodyHit() {
         Gdx.app.log("Lava", "Body");
         setFilter(CollisionSettings.DESTROYED_BIT);

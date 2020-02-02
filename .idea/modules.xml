@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OOPGames.iml" filepath="$PROJECT_DIR$/OOPGames.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/OOPGames-android.iml" filepath="$PROJECT_DIR$/android/OOPGames-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/OOPGames-core.iml" filepath="$PROJECT_DIR$/core/OOPGames-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desktop/OOPGames-desktop.iml" filepath="$PROJECT_DIR$/desktop/OOPGames-desktop.iml" />
       <module fileurl="file://$PROJECT_DIR$/android/android.iml" filepath="$PROJECT_DIR$/android/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/desktop/desktop.iml" filepath="$PROJECT_DIR$/desktop/desktop.iml" />

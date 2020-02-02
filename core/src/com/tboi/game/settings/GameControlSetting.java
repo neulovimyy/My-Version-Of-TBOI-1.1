@@ -18,8 +18,8 @@ public class GameControlSetting {
     public final static int WIDTH = 1280;
     public final static int HEIGHT = 720;
     public final static boolean RESIZABLE = false;
-    public final static float PPM1 = 1 / 100f;
-    public final static float PPM2 = 100f;
+    public final static float PPM2 = 100;
+    public final static float ROOM_WIDTH = 384/100, ROOM_HEIGHT = 230/100;
 
     /**
      * this class is used to configure control for multiple platform

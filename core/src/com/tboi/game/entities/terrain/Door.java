@@ -32,7 +32,7 @@ public class Door extends CollidingObject {
         setFilter(CollisionSettings.DESTROYED_BIT);
     }
 
-    @Override
+
     public void onBodyHit() {
         Gdx.app.log("Door", "Body");
         setFilter(CollisionSettings.DESTROYED_BIT);

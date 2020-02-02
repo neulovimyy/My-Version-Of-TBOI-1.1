@@ -31,7 +31,7 @@ public abstract class CollidingObject {
         this.screen = screen;
         this.world = screen.getWorld();
         this.map = screen.getMap();
-        object.setColor(Color.RED);
+        object.setColor(Color.BLUE);
         this.object = object;
         this.bounds = ((RectangleMapObject) object).getRectangle();
 
@@ -52,7 +52,6 @@ public abstract class CollidingObject {
 
     }
     public abstract void onHeadHit();
-    public abstract void onBodyHit();
 
     public void setFilter(short bit) {
         Filter filter = new Filter();

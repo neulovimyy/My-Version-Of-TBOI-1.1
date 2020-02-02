@@ -7,6 +7,8 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
+import com.tboi.game.enemy.Bat;
+import com.tboi.game.enemy.Enemy;
 import com.tboi.game.entities.MainCharacter;
 import com.tboi.game.entities.collision.CollisionSettings;
 import com.tboi.game.entities.terrain.Chest;
@@ -22,6 +24,7 @@ import static com.tboi.game.entities.collision.CollisionSettings.DOOR_BIT;
 import static com.tboi.game.entities.collision.CollisionSettings.ENEMY_BIT;
 import static com.tboi.game.entities.collision.CollisionSettings.KEY_BIT;
 import static com.tboi.game.entities.collision.CollisionSettings.MC_BIT;
+import static com.tboi.game.entities.collision.CollisionSettings.WALL_BIT;
 
 public class ObjectContact implements ContactListener {
 
@@ -65,6 +68,20 @@ public class ObjectContact implements ContactListener {
                     ((Lava)a.getUserData()).inflictDamage();
                 } else if (b.getFilterData().categoryBits == DESTROYED_LAVA_BIT) {
                     ((Lava)b.getUserData()).inflictDamage();
+                }
+                break;
+            case  WALL_BIT | ENEMY_BIT :
+                if(a.getFilterData().categoryBits == WALL_BIT) {
+                    ((Bat)a.getUserData()).flipDirection(true, false);
+                } else if (b.getFilterData().categoryBits == WALL_BIT) {
+                    ((Bat)a.getUserData()).flipDirection(true, false);
+                }
+                break;
+            case CHEST_BIT | ENEMY_BIT :
+                if(a.getFilterData().categoryBits == CHEST_BIT) {
+                    ((Bat)a.getUserData()).flipDirection(true, false);
+                } else if (b.getFilterData().categoryBits == CHEST_BIT) {
+                    ((Bat)a.getUserData()).flipDirection(true, false);
                 }
                 break;
         }
