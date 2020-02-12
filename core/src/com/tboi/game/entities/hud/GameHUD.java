@@ -2,6 +2,7 @@ package com.tboi.game.entities.hud;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -44,14 +45,15 @@ public class GameHUD implements Disposable {
     public Integer bomb;
     public Integer coin;
     String hr,min,sec;
-    ArrayList<Image> goldHearts, redHeart, boneHeart;
-    Image goldHeart;
+    ArrayList<Image> goldHearts, redHearts, boneHeart;
+    Image coinHeart, redHeart;
     Label countUpTimer;
     static Label score;
     Label keyCount;
     Label coinCount;
     Label bombCount;
     Label floor;
+    Table heartTable;
 
     static Label hitpoints;
 
@@ -81,12 +83,22 @@ public class GameHUD implements Disposable {
         param.color = Color.LIGHT_GRAY; param.size = 40;
         style2.font = gen.generateFont(param);
 
-        goldHeart = new Image();
-        goldHeart.setDrawable(new SpriteDrawable(new Sprite(new Texture("pictures/hearts/gold-heart.png"))));
+        Sprite red = new Sprite(new Texture("entities/heart/images/red-heart-full.png"));
+        Sprite coin = new Sprite(new Texture("entities/heart/images/coin-heart.png"));
+        red.setSize(64,64); coin.setSize(64, 64);
+        redHeart = new Image(); coinHeart = new Image();
+        redHeart.setDrawable(new SpriteDrawable(red)); coinHeart.setDrawable(new SpriteDrawable(coin));
 
-        goldHearts = new ArrayList<Image>();
-        goldHearts.add(goldHeart);
-        goldHearts.add(goldHeart);
+        redHearts = new ArrayList<Image>();
+        redHearts.add(0, redHeart);
+        redHearts.add(1, coinHeart);
+
+        heartTable = new Table();
+        heartTable.top().left();
+        heartTable.setFillParent(true);
+        for (int i=0; i<redHearts.size();i++) {
+            heartTable.add(redHearts.get(i)).padRight(i*15);
+        }
 
         Table floorLabel = new Table(skin);
         floorLabel.top().right();
@@ -107,11 +119,8 @@ public class GameHUD implements Disposable {
         floorLabel.add(floor).padRight(120).padTop(10);//add level to top right
         stage.addActor(floorLabel);
 
-        //luck = new Label("Luck: 10%", style2);
-        //damage = new Label("Damage: 5", style2);
-        //movement = new Label("Movement: 5",style2);
         hitpoints = new Label("Hitpoints :"+health, style2);
-        //entities.add(luck); entities.row(); entities.add(damage); entities.row(); entities.add(movement); entities.row();
+
         entities.add(hitpoints); stage.addActor(entities);
 
         move = new Touchpad(0, skin, "default");
@@ -150,10 +159,23 @@ public class GameHUD implements Disposable {
     }
 
     public static void reduceHealth(int i) {
-
+        /**
+         * this method reduces player health when engaging to spikes and enemies
+         */
         health -= i;
-        if(health == 0) {
+        if(health == 0) { //check whether to play dead sound
             isDead = true;
+            Sound sound = Gdx.audio.newSound(Gdx.files.internal("sounds/sfx/dead.wav"));
+            sound.setLooping(1, false);
+            sound.setPitch(1, 0.5f);
+            sound.setVolume(1,0.5f);
+            //sound.play();
+        } else { //else play hurt
+            Sound sound = Gdx.audio.newSound(Gdx.files.internal("sounds/sfx/hurt.wav"));
+            sound.setLooping(1, false);
+            sound.setPitch(1, 0.5f);
+            sound.setVolume(1,0.5f);
+            //sound.play();
         }
 
         hitpoints.setText("Hitpoints: "+health);
@@ -189,6 +211,10 @@ public class GameHUD implements Disposable {
         count += delta;
         if(count >= 1){
             second++;
+
+            if(second%2 == 0) {
+                //reduceHealth(1);
+            }
             if(second == 60) {
                 minute++;
                 second = 0;
@@ -209,7 +235,9 @@ public class GameHUD implements Disposable {
             }
             countUpTimer.setText("Time: " +hour+":"+min+":"+sec);
             count = 0;
+
         }
+
     }
 
     public static boolean isIsDead() {

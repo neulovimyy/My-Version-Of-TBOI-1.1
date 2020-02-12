@@ -1,22 +1,10 @@
 package com.tboi.game.enemy;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.CircleShape;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.tboi.game.entities.collision.CollisionSettings;
 import com.tboi.game.screens.GameScreen;
@@ -38,7 +26,6 @@ public class Bat extends Enemy {
         statetime += delta;
         setPosition(body.getPosition().x - getWidth() / 2, body.getPosition().y - getHeight() / 2 );
         setRegion(down.getKeyFrame(statetime, true));
-        body.setLinearVelocity(vec);
     }
 
     @Override
@@ -48,24 +35,16 @@ public class Bat extends Enemy {
         def.type = BodyDef.BodyType.DynamicBody;
         def.position.set(getX(), getY());
         body = world.createBody(def);
-        body.setLinearVelocity(new Vector2(2,0));
 
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(4f/GameControlSetting.PPM2, 4f/GameControlSetting.PPM2);
+        shape.setAsBox(4f/GameControlSetting.PPM, 4f/GameControlSetting.PPM);
 
         f.shape = shape;
         f.filter.categoryBits = CollisionSettings.ENEMY_BIT;
-        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.DOOR_BIT |
-                            CollisionSettings.CHEST_BIT | CollisionSettings.MC_BIT;
-        body.createFixture(f).setUserData(this);
-    }
+        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.MC_BIT;
 
-    @Override
-    public void flipDirection(boolean x, boolean y) {
-        if(x)
-            vec.x = -vec.x;
-        if(y)
-            vec.y = -vec.y;
+        body.createFixture(f).setUserData(this);
+        body.setLinearVelocity(vec);
     }
 
     private void animation() {
@@ -74,5 +53,12 @@ public class Bat extends Enemy {
             frames.add(new TextureRegion(screen.getBat().findRegion("32x32-bat-sprite"), i*32, 0, 32, 32));
             down = new Animation<TextureRegion>(0.1f, frames);
         frames.clear();
+    }
+
+    public void reduceHealth() {
+        batLife--;
+        if(batLife == 0 && !world.isLocked()) {
+            world.destroyBody(body);
+        }
     }
 }

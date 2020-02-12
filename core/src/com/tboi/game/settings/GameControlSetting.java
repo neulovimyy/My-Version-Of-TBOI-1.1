@@ -18,8 +18,8 @@ public class GameControlSetting {
     public final static int WIDTH = 1280;
     public final static int HEIGHT = 720;
     public final static boolean RESIZABLE = false;
-    public final static float PPM2 = 100;
-    public final static float ROOM_WIDTH = 384/100, ROOM_HEIGHT = 230/100;
+    public final static float PPM = 100;
+    public final static float ROOM_WIDTH = 416, ROOM_HEIGHT = 312, HALF_WIDTH = 208, HALF_HEIGHT = 156;
 
     /**
      * this class is used to configure control for multiple platform
@@ -80,17 +80,17 @@ public class GameControlSetting {
 
             float X; float Y;
             if(Gdx.input.isKeyPressed(Input.Keys.D)){
-                X = 0.5f;
+                X = 1f;
             } else if(Gdx.input.isKeyPressed(Input.Keys.A)){
-                X = -0.5f;
+                X = -1f;
             } else {
                 X = 0;
             }
 
             if(Gdx.input.isKeyPressed(Input.Keys.W)) {
-                Y = 0.5f;
+                Y = 1f;
             } else if(Gdx.input.isKeyPressed(Input.Keys.S)){
-                Y = -0.5f;
+                Y = -1f;
             } else {
                 Y = 0;
             }
@@ -98,6 +98,9 @@ public class GameControlSetting {
                     X - mc.body.getLinearVelocity().x * mc.body.getMass(),
                     Y - mc.body.getLinearVelocity().y * mc.body.getMass(),
                     mc.body.getWorldCenter().x, mc.body.getWorldCenter().y, true);
+            if(Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
+                mc.fire();
+            }
         }
     }
 

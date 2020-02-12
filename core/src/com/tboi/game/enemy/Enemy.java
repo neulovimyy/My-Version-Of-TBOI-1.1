@@ -27,6 +27,7 @@ public abstract class Enemy extends Sprite {
     protected GameScreen screen;
     public Body body;
     public Vector2 vec;
+    int batLife = 5;
 
     public Enemy (GameScreen screen, float x, float y) {
         this.screen = screen;
@@ -37,6 +38,5 @@ public abstract class Enemy extends Sprite {
     }
 
     protected abstract void defineEnemy();
-
-    public abstract void flipDirection(boolean x, boolean y);
+    protected abstract void reduceHealth();
 }

@@ -12,6 +12,7 @@ public class SteeringEntity implements Steerable<Vector2>{
     Body body;
     float radius, linSpeed, linAcce, angleSpeed, orientation, angleAcce;
     boolean tagged = false;
+
     SteeringBehavior<Vector2> sBeve;
     SteeringAcceleration<Vector2> sAcce;
 
@@ -19,8 +20,8 @@ public class SteeringEntity implements Steerable<Vector2>{
         this.body = body;
         this.radius = radius;
 
-        this.linAcce = 20; this.linSpeed = 25;
-        this.angleAcce = 40; this.angleSpeed = 20;
+        this.linAcce = 200; this.linSpeed = 100;
+        this.angleAcce = 5; this.angleSpeed = 20;
         this.sAcce = new SteeringAcceleration<Vector2>(new Vector2());
         this.body.setUserData(this);
         this.tagged = false;
@@ -144,5 +145,8 @@ public class SteeringEntity implements Steerable<Vector2>{
     }
     public SteeringBehavior<Vector2> getsBeve() {
         return sBeve;
+    }
+    public void setsBeve(SteeringBehavior<Vector2> sBeve) {
+        this.sBeve = sBeve;
     }
 }

@@ -29,11 +29,11 @@ public class TBOIGame extends Game{
 	@Override
 	public void create () {
 		camera = new OrthographicCamera();
-		music = Gdx.audio.newMusic(Gdx.files.internal("sounds/tboi-soundtrack.mp3"));
+		//music = Gdx.audio.newMusic(Gdx.files.internal("sounds/tboi-soundtrack.mp3"));
 		batch = new SpriteBatch();
-		music.setLooping(true);
-		music.setVolume(0.5f);
-		music.play();
+		//music.setLooping(true);
+		//music.setVolume(0.5f);
+		//music.play();
 		setScreen(new Level1(this));
 	}
 
@@ -44,7 +44,7 @@ public class TBOIGame extends Game{
 	
 	@Override
 	public void dispose () {
-		music.dispose();
+		//music.dispose();
 		super.dispose();
 	}
 }

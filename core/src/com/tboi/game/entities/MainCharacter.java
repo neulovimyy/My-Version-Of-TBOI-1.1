@@ -1,11 +1,10 @@
 package com.tboi.game.entities;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -15,10 +14,10 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.tboi.game.entities.collision.CollisionSettings;
-import com.tboi.game.entities.terrain.Chest;
+import com.tboi.game.entities.projectiles.Bullet;
 import com.tboi.game.screens.GameScreen;
-import com.tboi.game.settings.Conditions;
-import com.tboi.game.settings.GameControlSetting;
+
+import static com.tboi.game.settings.GameControlSetting.PPM;
 
 public class MainCharacter extends Sprite{
 
@@ -37,9 +36,11 @@ public class MainCharacter extends Sprite{
     public enum Direction {LEFT, RIGHT, DOWN, UP, STEADY}; //enums to determine direction
     public Direction currentState;
     public Direction previousState;
-    boolean isTeleported;
+    Boolean isRight, isUp;
     TiledMap map;
     public FixtureDef f;
+
+    Array<Bullet> tears;
     /**
      * Class for MC
      *
@@ -51,44 +52,53 @@ public class MainCharacter extends Sprite{
         this.map = game.getMap();
         this.world = game.getWorld();
 
-        frames();
+        frames(); //frames for isaac
 
         defineMC();// defining body
 
         region = new TextureRegion(getTexture(), 0, 0, 96, 64);
-        setBounds(0, 0, 96 / GameControlSetting.PPM2, 64 / GameControlSetting.PPM2);
+        setBounds(0, 0, 96 / PPM, 64 / PPM);
         setRegion(region);
         timer = 0;
         currentState = Direction.STEADY;
         previousState = Direction.STEADY;
 
+        tears = new Array<Bullet>();
     }
 
     public void update(float delta) { //positioning the sprite to the body
         setPosition(body.getPosition().x - getWidth() / 2, body.getPosition().y - 15/100f );
         setRegion(getFacade(delta));
+
+        for(Bullet  ball : tears) {
+            ball.update(delta);
+            if(ball.isDestroyed()) {
+                tears.removeValue(ball, true);
+            }
+        }
     }
 
     public void defineMC() {
         BodyDef def = new BodyDef();
         f = new FixtureDef();
         def.type = BodyDef.BodyType.DynamicBody;
-        def.position.set(176/GameControlSetting.PPM2, 124f/GameControlSetting.PPM2);
+        def.position.set(200/ PPM, 100/ PPM);
         body = world.createBody(def);
 
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(7f/GameControlSetting.PPM2, 3f/GameControlSetting.PPM2);
+        shape.setAsBox(7f/ PPM, 3f/ PPM);
 
         f.shape = shape;
-        f.filter.categoryBits = CollisionSettings.MC_BIT;
-        f.filter.maskBits = CollisionSettings.WALL_BIT | CollisionSettings.DOOR_BIT | CollisionSettings.CHEST_BIT
-                | CollisionSettings.ENEMY_BIT;
         body.createFixture(f);
 
         CircleShape head = new CircleShape();
-        head.setPosition(new Vector2(0, 12f/GameControlSetting.PPM2));
-        head.setRadius(10f/GameControlSetting.PPM2);
+        head.setPosition(new Vector2(0, 12f/ PPM));
+        head.setRadius(10f/ PPM);
         f.shape = head;
+
+        f.filter.categoryBits = CollisionSettings.MC_BIT;
+        f.filter.maskBits = CollisionSettings.DOOR_BIT | CollisionSettings.CHEST_BIT
+                | CollisionSettings.ENEMY_BIT | CollisionSettings.WALL_BIT;
 
         body.createFixture(f).setUserData(this);
     }
@@ -97,21 +107,26 @@ public class MainCharacter extends Sprite{
     public Direction getDirection() {
             if (body.getLinearVelocity().y > 0 || ((body.getLinearVelocity().y > 0 && body.getLinearVelocity().x > 0) ||
                     (body.getLinearVelocity().y > 0 && body.getLinearVelocity().x < 0))) {
+                isUp = true; isRight = null;
                 return Direction.UP;  //up
 
             } else if (body.getLinearVelocity().y < 0 || ((body.getLinearVelocity().y < 0 && body.getLinearVelocity().x > 0) ||
                     (body.getLinearVelocity().y < 0 && body.getLinearVelocity().x < 0))){
+                isUp = false; isRight = null;
                 return Direction.DOWN;//down
 
             } else if (body.getLinearVelocity().x < 0 || ((body.getLinearVelocity().y > 0 && body.getLinearVelocity().x < 0) ||
                     (body.getLinearVelocity().x < 0 && body.getLinearVelocity().y < 0))) {
+                isUp = null; isRight = false;
                 return Direction.LEFT;//left
 
             } else if (body.getLinearVelocity().x > 0 || ((body.getLinearVelocity().y > 0 && body.getLinearVelocity().x > 0) ||
                     (body.getLinearVelocity().x > 0 && body.getLinearVelocity().y < 0))) {
+                isUp = null; isRight = true;
                 return Direction.RIGHT;//right
 
             } else {
+                isUp = false; isRight = null;
                 return Direction.STEADY;//steady
             }
     }
@@ -124,18 +139,23 @@ public class MainCharacter extends Sprite{
         switch (currentState){
             case DOWN:
                 region = down.getKeyFrame(timer, true);
+
                 break;
             case LEFT:
                 region = left.getKeyFrame(timer, true);
+
                 break;
             case RIGHT:
                 region = right.getKeyFrame(timer, true);
+
                 break;
             case UP:
                 region = up.getKeyFrame(timer, true);
+
                 break;
             default:
                 region = steady.getKeyFrame(timer);
+
                 break;
         }
 
@@ -174,6 +194,17 @@ public class MainCharacter extends Sprite{
         frame.add(new TextureRegion(getTexture(), 480, 0, 96,  64));
         up = new Animation<TextureRegion>(0.1f, frame);
         frame.clear();
+    }
+
+    public void fire(){
+        tears.add(new Bullet(game, isRight, isUp, body.getPosition().x, body.getPosition().y));
+    }
+
+    public void draw(Batch batch) {
+        super.draw(batch);
+        for(Bullet bullet : tears) {
+            bullet.draw(batch);
+        }
     }
 
     public World getWorld() {

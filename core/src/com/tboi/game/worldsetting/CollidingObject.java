@@ -1,6 +1,7 @@
 package com.tboi.game.worldsetting;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -17,7 +18,12 @@ import com.badlogic.gdx.physics.box2d.joints.MouseJoint;
 import com.tboi.game.screens.GameScreen;
 import com.tboi.game.settings.GameControlSetting;
 
-public abstract class CollidingObject {
+import static com.tboi.game.entities.collision.CollisionSettings.ENEMY_BIT;
+import static com.tboi.game.entities.collision.CollisionSettings.MC_BIT;
+import static com.tboi.game.entities.collision.CollisionSettings.PROJ_BIT;
+import static com.tboi.game.entities.collision.CollisionSettings.WALL_BIT;
+
+public abstract class CollidingObject extends Sprite {
 
     protected World world;
     protected GameScreen screen;
@@ -31,7 +37,6 @@ public abstract class CollidingObject {
         this.screen = screen;
         this.world = screen.getWorld();
         this.map = screen.getMap();
-        object.setColor(Color.BLUE);
         this.object = object;
         this.bounds = ((RectangleMapObject) object).getRectangle();
 
@@ -43,12 +48,11 @@ public abstract class CollidingObject {
         bdef.position.set((bounds.getX() + bounds.getWidth() / 2) / 100f, (bounds.getY() + bounds.getHeight() / 2) / 100f);
 
         body = world.createBody(bdef);
-
+        fdef.filter.categoryBits = WALL_BIT;
+        fdef.filter.maskBits = MC_BIT | ENEMY_BIT | PROJ_BIT;
         shape.setAsBox(bounds.getWidth() / 2 / 100, bounds.getHeight() / 2 / 100);
-
         fdef.shape = shape;
-        fixture = body.createFixture(fdef);
-
+        body.createFixture(fdef).setUserData(this);
 
     }
     public abstract void onHeadHit();
@@ -57,11 +61,6 @@ public abstract class CollidingObject {
         Filter filter = new Filter();
         filter.categoryBits = bit;
         fixture.setFilterData(filter);
-    }
-
-    public TiledMapTileLayer.Cell thirdLayer() {
-        TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(2);
-        return layer.getCell((int)(body.getPosition().x * 100f) / 32, (int) (body.getPosition().y * 100f) / 32);
     }
 
 }

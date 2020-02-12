@@ -17,10 +17,10 @@ public class Level1 extends Level {
     @Override
     public void show(){
         super.show();
-        map = new TmxMapLoader().load("map/maps/dungeon1-1.tmx"); //map
-        renderer.setMap(map);
-        setting = new WorldSetting(this);
-        mainChar = new SteeringEntity(mc.body, 10);
+        //map = new TmxMapLoader().load("map/levels/basement.tmx"); //map
+        //renderer.setMap(map);
+        //setting = new WorldSetting(this);
+        //mainChar = new SteeringEntity(mc.body, 10);
     }
 
 }
